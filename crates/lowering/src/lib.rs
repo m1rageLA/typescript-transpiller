@@ -1,8 +1,12 @@
 use logger::Logger;
-use swc_ecma_ast::{Module, ModuleItem, Stmt};
-// ModuleItem;
+use swc_ecma_ast::{Decl, Module, ModuleItem, Stmt};
 
-// entry point for lowering
+mod transformers;
+
+use transformers::*;
+// -------------------------------
+// LEVEL 1
+// ------------------------------
 pub fn lowering(ast: Module) -> Result<Module, String> {
     for item in ast.body.iter() {
         match item {
@@ -20,32 +24,29 @@ pub fn lowering(ast: Module) -> Result<Module, String> {
     Ok(ast)
 }
 
-fn handle_stmt(stmt: &Stmt) {
-    match stmt {
-        // Core
-        Stmt::Decl(_) => {}
-        Stmt::Expr(_) => {}
-        // Other statements
-        Stmt::Block(_) => {}
-        Stmt::Empty(_) => {}
-        Stmt::Debugger(_) => {}
-        Stmt::With(_) => {}
-        // Control flow statements
-        Stmt::Return(_) => {}
-        Stmt::Labeled(_) => {}
-        Stmt::Break(_) => {}
-        Stmt::Continue(_) => {}
-        // Choice statements
-        Stmt::If(_) => {}
-        Stmt::Switch(_) => {}
-        // Loops
-        Stmt::While(_) => {}
-        Stmt::DoWhile(_) => {}
-        Stmt::For(_) => {}
-        Stmt::ForIn(_) => {}
-        //
+// -------------------------------
+// LEVEL 2
+// ------------------------------
+fn handle_stmt(node: &Stmt) {
+    match node {
+        Stmt::Decl(decl) => handle_decl(decl),
+
         _ => Logger::not_supported(
-            &format!("Statement: {:?} is not part of the ES5 standard", stmt),
+            &format!("Statement: {:?} is not part of the ES5 standard", node),
+            "lowering",
+        ),
+    }
+}
+
+// -------------------------------
+// LEVEL 3
+// ------------------------------
+fn handle_decl(decl: &Decl) {
+    match decl {
+        Decl::Var(var) => var_decl::transform_var_decl(var),
+
+        _ => Logger::not_supported(
+            &format!("Declaration: {:?} is not part of the ES5 standard", decl),
             "lowering",
         ),
     }
