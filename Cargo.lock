@@ -19,6 +19,7 @@ dependencies = [
  "logger",
  "lowering",
  "parser",
+ "swc_ecma_ast",
 ]
 
 [[package]]

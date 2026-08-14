@@ -12,4 +12,26 @@ members = ["crates/_compiler", "crates/lowering", "crates/logger", "crates/parse
 resolver = "3"
 
 [dependencies]
+compiler.workspace = true
+
+[workspace.dependencies]
 compiler = { package = "_compiler", path = "crates/_compiler" }
+logger = { path = "crates/logger" }
+lowering = { path = "crates/lowering" }
+parser = { path = "crates/parser" }
+schema = { path = "crates/schema" }
+reserch = { path = "crates/reserch" }
+proc-macro2 = "1.0.107"
+quote = "1.0.47"
+swc = "72.0.1"
+swc_common = "24.0.0"
+swc_core = "74.0.2"
+swc_ecma_ast = "26.0.0"
+swc_ecma_codegen = "29.0.0"
+swc_ecma_compat_es2015 = "52.0.0"
+swc_ecma_parser = "42.0.0"
+swc_ecma_preset_env = "60.0.0"
+swc_ecma_transforms_base = "46.0.1"
+swc_ecma_transforms_compat = "54.0.0"
+swc_ecma_visit = "26.0.0"
+swc_visit = "2.0.1"

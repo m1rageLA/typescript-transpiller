@@ -14,7 +14,7 @@ fn get_token_stream() -> TokenStream {
 mod tests {
     use std::println;
 
-use super::*;
+    use super::*;
 
     #[test]
     fn generate_token_stream() {

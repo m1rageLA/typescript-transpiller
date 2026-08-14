@@ -3,7 +3,7 @@ use crate::Position;
 pub enum Expression {
     AssignmentExpression,
     BinaryExpression,
-   Literal,
+    Literal,
 }
 
 enum BinaryOperator {
@@ -39,11 +39,11 @@ struct AssignmentExpression {
 }
 
 enum ValueTypes {
-    String, 
-    Boolean
+    String,
+    Boolean,
 }
 
 struct Literal {
-    value: ValueTypes,   
+    value: ValueTypes,
     position: Position,
 }

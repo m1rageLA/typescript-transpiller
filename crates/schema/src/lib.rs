@@ -4,15 +4,15 @@
 // const x = 10;
 
 mod declarations;
-mod identifiers;    
 mod expressions;
+mod identifiers;
 
 pub struct Position {
     line: usize,
     column: usize,
 }
 
-// struct Program { 
+// struct Program {
 //     statements: Vec<Statement>,
 //     position: Position,
 // }
