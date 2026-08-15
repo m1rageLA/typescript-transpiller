@@ -21,6 +21,7 @@ lowering = { path = "crates/lowering" }
 parser = { path = "crates/parser" }
 schema = { path = "crates/schema" }
 reserch = { path = "crates/reserch" }
+
 proc-macro2 = "1.0.107"
 quote = "1.0.47"
 swc = "72.0.1"
