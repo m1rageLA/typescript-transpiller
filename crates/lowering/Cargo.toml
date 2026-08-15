@@ -7,3 +7,4 @@ edition = "2024"
 swc_ecma_ast.workspace = true
 logger.workspace = true
 schema.workspace = true
+derive_more = "2.1.1"
