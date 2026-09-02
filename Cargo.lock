@@ -16,6 +16,7 @@ dependencies = [
 name = "_compiler"
 version = "0.1.0"
 dependencies = [
+ "codegen",
  "logger",
  "lowering",
  "parser",
@@ -263,6 +264,13 @@ dependencies = [
  "iana-time-zone",
  "num-traits",
  "windows-link",
+]
+
+[[package]]
+name = "codegen"
+version = "0.1.0"
+dependencies = [
+ "swc_ecma_ast",
 ]
 
 [[package]]

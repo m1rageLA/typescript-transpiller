@@ -8,7 +8,7 @@ name = "compiler-entrypoint"
 path = "main.rs"
 
 [workspace]
-members = ["crates/_compiler", "crates/lowering", "crates/logger", "crates/parser", "crates/schema", "crates/reserch"]
+members = ["crates/_compiler", "crates/lowering", "crates/logger", "crates/parser", "crates/schema", "crates/reserch", "crates/lowering/../codegen"]
 resolver = "3"
 
 [dependencies]
@@ -21,6 +21,7 @@ lowering = { path = "crates/lowering" }
 parser = { path = "crates/parser" }
 schema = { path = "crates/schema" }
 reserch = { path = "crates/reserch" }
+codegen = { path = "crates/codegen" }
 
 proc-macro2 = "1.0.107"
 quote = "1.0.47"

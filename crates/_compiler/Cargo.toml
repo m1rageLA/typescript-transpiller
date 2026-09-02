@@ -7,4 +7,5 @@ edition = "2024"
 logger.workspace = true
 parser.workspace = true
 lowering.workspace = true
+codegen.workspace = true
 swc_ecma_ast.workspace = true
