@@ -1,6 +1,5 @@
 use logger::Logger;
 use parser::parse;
-use swc_ecma_ast::Module;
 use codegen::codegen;
 
 

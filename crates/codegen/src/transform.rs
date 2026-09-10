@@ -1,6 +1,6 @@
 use proc_macro2::TokenStream;
 use quote::quote;
-use swc_ecma_ast::{Lit, Pat, VarDecl};
+use swc_ecma_ast::{Pat, VarDecl};
 
 use crate::{dispatch_expr, helpers};
 
@@ -13,7 +13,9 @@ pub fn variable_declaration(var_decl: VarDecl) -> TokenStream {
         };
 
         let init_expr = match &decl.init {
+            // let x = 5; // example with initializer
             Some(expr) => dispatch_expr(*expr.clone()),
+            // let x; // example without initializer
             None => quote! { () },
         };
 

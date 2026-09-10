@@ -1,9 +1,8 @@
 use std::{println, todo};
-use quote::quote;
 use swc_ecma_ast::{
-    Decl, Expr, Lit, Module, Pat,
+    Decl, Expr, Lit, Module,
     ModuleItem::{self},
-    Stmt, VarDecl,
+    Stmt,
 };
 use proc_macro2::TokenStream;
 mod helpers;

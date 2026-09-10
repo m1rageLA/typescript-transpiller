@@ -55,7 +55,6 @@ pub fn normalize_source_to_es5(normalized_ast: Module) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
     fn test() {
