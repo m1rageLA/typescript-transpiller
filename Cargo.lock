@@ -270,6 +270,9 @@ dependencies = [
 name = "codegen"
 version = "0.1.0"
 dependencies = [
+ "logger",
+ "proc-macro2",
+ "quote",
  "swc_ecma_ast",
 ]
 

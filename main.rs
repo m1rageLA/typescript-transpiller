@@ -6,12 +6,13 @@ use compiler::compile_and_execute::compile_and_execute;
 
 fn main() {
     let source = r#"
-        const x = 5;
+        const x = '231';
     "#;
 
     let norm = normalize_to_es5(source);
     println!("\n\n{}\n\n", norm);
 
-    let ast = compile_and_execute(source);
-    println!("\n\n{:#?}\n\n", ast);
+    let code = compile_and_execute(source);
+
+    println!("{code}");
 }
