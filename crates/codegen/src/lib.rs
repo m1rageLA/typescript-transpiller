@@ -46,6 +46,7 @@ fn dispatch_expr(expr: Expr) -> TokenStream {
 pub fn dispatch_literal(lit: Lit) -> TokenStream {
     match lit {
         Lit::Str(str_lit) => transform::literal_string(str_lit),
+        Lit::Num(num_lit) => transform::literal_number(num_lit),
         _ => todo!("Handle other literal types as needed"),
     }
 }

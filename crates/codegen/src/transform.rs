@@ -37,3 +37,12 @@ pub fn literal_string(str_lit: swc_ecma_ast::Str) -> TokenStream {
         #literal
     }
 }
+
+pub fn literal_number(num_lit: swc_ecma_ast::Number) -> TokenStream {
+    let val = num_lit.value;
+    // OPT(RED): Consider handling different numeric types it might have huge performance implications
+    let literal = proc_macro2::Literal::f64_suffixed(val);
+    quote! {
+        #literal
+    }
+}
